@@ -7,6 +7,7 @@ body {
 
 .main {
   display: grid;
+  background-color: darkgreen;
   padding: 7.5%;
   height: 75%;
   width: 75%;
@@ -20,8 +21,9 @@ body {
     "d d d d d e e e e e f f f f f"
     "d d d d d e e e e e f f f f f"
     "d d d d d e e e e e f f f f f"; */
-    grid-template-columns: 1fr 2fr 2fr ;
+    
     /* grid-template-columns: ; */
+    grid-template-columns: 1fr 2fr 2fr ;
 }
 
 /* .main > cardBack {
@@ -54,15 +56,19 @@ body {
     background-color: blueviolet;
 } */
 
+.playerCards {
+  border: red solid;
+  color: white;
+}
+
+.dealerCards {
+  border: green solid;
+  color: white;
+}
+
 .buttons {
   display: grid;
   border: turquoise solid;
 }
 
-.playerCards {
-  border: red solid;
-}
 
-.dealerCards {
-  border: green solid;
-}
