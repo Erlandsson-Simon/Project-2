@@ -1,0 +1,68 @@
+body {
+  border: rgb(9, 255, 9) solid;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+}
+
+.main {
+  display: grid;
+  padding: 7.5%;
+  height: 75%;
+  width: 75%;
+  /* background-color: rgb(37, 240, 255); */
+
+  /* grid-template-areas: 
+    "a a a b b b b b b c c c c c c"
+    "a a a b b b b b b c c c c c c"
+    "a a a b b b b b b c c c c c c"
+    "d d d d d e e e e e f f f f f"
+    "d d d d d e e e e e f f f f f"
+    "d d d d d e e e e e f f f f f"
+    "d d d d d e e e e e f f f f f"; */
+    grid-template-columns: 1fr 2fr 2fr ;
+    /* grid-template-columns: ; */
+}
+
+/* .main > cardBack {
+    grid-area: a;
+    background-color: green;
+}
+
+.main > playerCards {
+    grid-area: b;
+    background-color: red;
+}
+
+.main > dealerCards {
+    grid-area: c;
+    background-color: aqua;
+}
+
+.main > dealCardsButton {
+    grid-area: d;
+    background-color: black;
+}
+
+.main > hitButton {
+    grid-area: e;
+    background-color: blue;
+}
+
+.main > stayButton {
+    grid-area: f;
+    background-color: blueviolet;
+} */
+
+.buttons {
+  display: grid;
+  border: turquoise solid;
+}
+
+.playerCards {
+  border: red solid;
+}
+
+.dealerCards {
+  border: green solid;
+}
