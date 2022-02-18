@@ -25,10 +25,12 @@ dealButton.addEventListener("click", createDeck);
 let hitButton = document.querySelector(".hitButton");
 hitButton.addEventListener("click", hit);
 
-let stayButton = document.querySelector(".stayButton");
-stayButton.addEventListener("click", stay);
+let standButton = document.querySelector(".standButton");
+standButton.addEventListener("click", stand);
 
 function createDeck() {
+    // 10 + ny deck
+    if(deck.length < 10) {
     deck = [];
     values.forEach(values => {
         suits.forEach(suits => {
@@ -46,6 +48,7 @@ function createDeck() {
         });
     });
     shuffleDeck(deck);
+}
     dealCards();
 }
 
@@ -55,6 +58,11 @@ function shuffleDeck(deck) {
 }
 
 function dealCards() {
+    dealerHand = []
+    playerHand = []
+
+    dealerLow = true;
+
     dealerHand.push(deck[0]);
     deck.shift();
     playerHand.push(deck[0]);
@@ -105,7 +113,7 @@ function dealerHit() {
     deck.shift();
 }
 
-function stay() {
+function stand() {
 
     if(checkDealerWeight > 16) {
         dealerLow = false;

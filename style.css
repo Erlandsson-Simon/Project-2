@@ -6,55 +6,22 @@ body {
 }
 
 .main {
-  display: grid;
   background-color: darkgreen;
-  padding: 7.5%;
-  height: 75%;
-  width: 75%;
-  /* background-color: rgb(37, 240, 255); */
-
-  /* grid-template-areas: 
-    "a a a b b b b b b c c c c c c"
-    "a a a b b b b b b c c c c c c"
-    "a a a b b b b b b c c c c c c"
-    "d d d d d e e e e e f f f f f"
-    "d d d d d e e e e e f f f f f"
-    "d d d d d e e e e e f f f f f"
-    "d d d d d e e e e e f f f f f"; */
-    
-    /* grid-template-columns: ; */
-    grid-template-columns: 1fr 2fr 2fr ;
+  height: 100%;
 }
 
-/* .main > cardBack {
-    grid-area: a;
-    background-color: green;
+.upperGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  border: white solid 3px;
 }
 
-.main > playerCards {
-    grid-area: b;
-    background-color: red;
+.lowerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 200px;
+  border: black solid 3px;
 }
-
-.main > dealerCards {
-    grid-area: c;
-    background-color: aqua;
-}
-
-.main > dealCardsButton {
-    grid-area: d;
-    background-color: black;
-}
-
-.main > hitButton {
-    grid-area: e;
-    background-color: blue;
-}
-
-.main > stayButton {
-    grid-area: f;
-    background-color: blueviolet;
-} */
 
 .playerCards {
   border: red solid;
@@ -66,9 +33,24 @@ body {
   color: white;
 }
 
-.buttons {
-  display: grid;
-  border: turquoise solid;
+.dealCardsButton,
+.hitButton,
+.standButton {
+  border-radius: 75px;
+  background-color: rgb(134, 14, 118);
+  margin: 4%;
+  color: white;
 }
 
+.cardBack {
+  position: relative;
+  left: 0px;
+  transition: all 0.5s ease-in-out;
+}
 
+.cardBack:hover {
+  left: 100px;
+}
+
+@keyframes drawCard {
+}
