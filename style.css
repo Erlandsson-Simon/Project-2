@@ -18,22 +18,13 @@ body {
   padding: 2%;
   height: 30%;
   grid-template-columns: 1fr 2fr 2fr;
-<<<<<<< HEAD
-=======
-  grid-gap: 5%;
-  border: white solid 3px;
->>>>>>> f74f02fa1ce5d31b90b946e30c1258d174bdd2a4
 }
 
 .lowerGrid {
   display: grid;
   height: 40%;
   grid-template-columns: 1fr 1fr 1fr;
-<<<<<<< HEAD
   height: 200px;
-=======
-  border: black solid 3px;
->>>>>>> f74f02fa1ce5d31b90b946e30c1258d174bdd2a4
 }
 
 .playerHand {
