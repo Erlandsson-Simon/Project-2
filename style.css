@@ -1,8 +1,7 @@
 body {
-  border: rgb(9, 255, 9) solid;
   margin: 0;
   padding: 0;
-  height: 500px;
+  height: 600px;
 }
 
 .main {
@@ -13,24 +12,27 @@ body {
 .upperGrid {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
-  border: white solid 3px;
 }
 
 .lowerGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   height: 200px;
-  border: black solid 3px;
 }
 
-.playerCards {
+.playerHand {
   border: red solid;
   color: white;
 }
 
-.dealerCards {
+.playerCards {
+}
+
+.dealerHand {
   border: green solid;
   color: white;
+}
+.dealerCards {
 }
 
 .dealCardsButton,

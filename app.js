@@ -47,8 +47,9 @@ function createDeck() {
             deck.push(card);
         });
     });
-    shuffleDeck(deck);
+    
 }
+    shuffleDeck(deck);
     dealCards();
 }
 
@@ -65,12 +66,21 @@ function dealCards() {
 
     dealerHand.push(deck[0]);
     deck.shift();
+
+    document.querySelector(".dealerCards").innerHTML = "";
+    document.querySelector(".dealerCards").append(dealerImgSelector());
+    
     playerHand.push(deck[0]);
     deck.shift();
+
     playerHand.push(deck[0]);
     deck.shift();
+
     dealerHand.push(deck[0]);
     deck.shift();
+
+    document.querySelector(".playerCards").innerHTML = "";
+    document.querySelector(".playerCards").append(playerImgSelector());
 
     playerCardAmount.innerHTML = "Player cards: " + checkPlayerWeight();
     dealerCardAmount.innerHTML = "Dealer cards: " + dealerHand[0].Weight;
@@ -95,6 +105,8 @@ function checkDealerWeight() {
 function hit() {
     playerHand.push(deck[0])
     deck.shift();
+    document.querySelector(".playerCards").innerHTML = "";
+    document.querySelector(".playerCards").append(playerImgSelector());
     if(checkPlayerWeight() > 21) {
         playerHand.forEach(playerHand => {
             if(playerHand.Value == "A") {
@@ -111,6 +123,8 @@ function hit() {
 function dealerHit() {
     dealerHand.push(deck[0]);
     deck.shift();
+    document.querySelector(".dealerCards").innerHTML = "";
+    document.querySelector(".dealerCards").append(dealerImgSelector());
 }
 
 function stand() {
@@ -141,4 +155,43 @@ function stand() {
             gameWon = true;
         }
     }
+}
+
+
+function playerImgSelector() {
+    let playerCardDiv = document.querySelector(".playerCards");
+
+    playerHand.forEach(element => {
+        let playerCardImgSrc = "./CardImages/";
+        playerCardImgSrc += element.Suit;
+        playerCardImgSrc += "/";
+        playerCardImgSrc += element.Value;
+        playerCardImgSrc += ".png";
+        console.log(playerCardImgSrc);
+        let playerCardImg = document.createElement("img");
+        playerCardImg.setAttribute("src", playerCardImgSrc);
+        playerCardImg.setAttribute("alt", element.Value + "of" + element.Suit);
+        playerCardDiv.append(playerCardImg);    
+    });
+
+    return playerCardDiv;
+}
+
+function dealerImgSelector() {
+    let dealerCardDiv = document.querySelector(".dealerCards");
+
+    dealerHand.forEach(element => {
+        let dealerCardImgSrc = "./CardImages/";
+        dealerCardImgSrc += element.Suit;
+        dealerCardImgSrc += "/";
+        dealerCardImgSrc += element.Value;
+        dealerCardImgSrc += ".png";
+        console.log(dealerCardImgSrc);
+        let dealerCardImg = document.createElement("img");
+        dealerCardImg.setAttribute("src", dealerCardImgSrc);
+        dealerCardImg.setAttribute("alt", element.Value + "of" + element.Suit);
+        dealerCardDiv.append(dealerCardImg);    
+    });
+
+    return dealerCardDiv;
 }
