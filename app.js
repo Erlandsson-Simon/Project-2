@@ -82,8 +82,8 @@ function dealCards() {
     document.querySelector(".playerCards").innerHTML = "";
     document.querySelector(".playerCards").append(playerImgSelector());
 
-    playerCardAmount.innerHTML = "Player cards: " + checkPlayerWeight();
-    dealerCardAmount.innerHTML = "Dealer cards: " + dealerHand[0].Weight;
+    playerCardText.innerHTML = "Player cards: 5"
+    dealerCardText.innerHTML = "Dealer cards: " + dealerHand[0].Weight;
 }
 
 function checkPlayerWeight() {
@@ -117,7 +117,7 @@ function hit() {
             console.log("You have lost");
         }
     }
-    playerCardAmount.innerHTML = "Player cards: " + checkPlayerWeight();
+   // playerCardAmount.innerHTML = "Player cards: " + checkPlayerWeight();
 }
 
 function dealerHit() {
@@ -135,7 +135,7 @@ function stand() {
     
     while(dealerLow) {
         dealerHit();
-        dealerCardAmount.innerHTML = "Dealer cards: " + checkDealerWeight();
+       // dealerCardAmount.innerHTML = "Dealer cards: " + checkDealerWeight();
 
         if(checkDealerWeight() > 16) {
             dealerLow = false;
@@ -159,7 +159,7 @@ function stand() {
 
 
 function playerImgSelector() {
-    let playerCardDiv = document.querySelector(".playerCards");
+    let playerCardDiv = document.createElement("div");
 
     playerHand.forEach(element => {
         let playerCardImgSrc = "./CardImages/";
@@ -178,7 +178,7 @@ function playerImgSelector() {
 }
 
 function dealerImgSelector() {
-    let dealerCardDiv = document.querySelector(".dealerCards");
+    let dealerCardDiv = document.createElement("div");
 
     dealerHand.forEach(element => {
         let dealerCardImgSrc = "./CardImages/";
