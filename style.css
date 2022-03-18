@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  height: 800px;
+  height: 100vh;
 }
 
 .main {
   background-color: darkgreen;
-  height: 600px;
+  height: 100%;
 }
 
 .upperGrid {
@@ -24,18 +24,11 @@ body {
 }
 
 .playerHand {
-  border: red solid;
   color: white;
-}
-
-.playerCards {
 }
 
 .dealerHand {
-  border: green solid;
   color: white;
-}
-.dealerCards {
 }
 
 .dealCardsButton,
@@ -49,14 +42,28 @@ body {
 }
 
 .cardBack {
-  position: relative;
-  left: 0px;
-  transition: all 0.5s ease-in-out;
+  margin-top: 10%;
+  margin-left: 20%;
 }
 
-.cardBack:hover {
-  left: 100px;
+.endScreen {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.61);
 }
 
-@keyframes drawCard {
+.endText {
+  color: white;
+  margin-right: 10%;
+}
+
+.endHelpText {
+  color: white;
 }
